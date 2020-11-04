@@ -1,13 +1,25 @@
+//Libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import thunk from "redux-thunk";
+import logger from "redux-logger";
+
+// redux/ helpers
+import { quoteReducer } from "./store/reducers/quoteReducer"
+//Components
 import App from './App';
 
+//Styles
+import './index.css';
+
+const store = createStore(quoteReducer, applyMiddleware(thunk, logger))
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
