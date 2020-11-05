@@ -22,9 +22,9 @@ const RandomQuote = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        isLoading: state.isLoading,
-        quote: state.randomQuote,
-        error: state.error
+        isLoading: state.randQuote.isLoading,
+        quote: state.randQuote.randomQuote,
+        error: state.randQuote.error
     }
 
 }

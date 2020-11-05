@@ -10,7 +10,7 @@ const initialState = {
     error: ""
 }
 
-export const quoteReducer= (state = initialState, action) => {
+const quoteReducer= (state = initialState, action) => {
     switch (action.type) {
         case FETCH_RQUOTE_START:
             return {
@@ -33,4 +33,6 @@ export const quoteReducer= (state = initialState, action) => {
         default:
             return state;
     }
-}
+};
+
+export default quoteReducer

@@ -1,4 +1,6 @@
 import RandomQuote from './components/RandomQuote';
+import AuthorQuotes from './components/AuthorQuotes';
+
 import './App.css';
 
 
@@ -7,6 +9,7 @@ function App() {
     <div className="App">
       <h1>Quote Query </h1>
       <RandomQuote />
+      <AuthorQuotes />
     </div>
   );
 }

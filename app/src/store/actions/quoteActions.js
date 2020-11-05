@@ -11,7 +11,6 @@ export const fetchRandomQuote = () => {
 
         axios.get('https://api.quotable.io/random')
             .then((res) => {
-                console.log(res.data)
                 dispatch({type: FETCH_RQUOTE_SUCCESS, payload: res.data});
             })
             .catch((err) => {

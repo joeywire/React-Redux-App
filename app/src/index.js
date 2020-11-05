@@ -7,15 +7,15 @@ import thunk from "redux-thunk";
 import logger from "redux-logger";
 
 // redux/ helpers
-import { quoteReducer } from "./store/reducers/quoteReducer"
+import reducer from "./store/reducers/index"
 //Components
 import App from './App';
 
 //Styles
 import './index.css';
 
-const store = createStore(quoteReducer, applyMiddleware(thunk, logger))
-
+const store = createStore(reducer, applyMiddleware(thunk, logger))
+console.log(store.getState())
 ReactDOM.render(
   <Provider store={store}>
     <App />
