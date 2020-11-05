@@ -14,12 +14,14 @@ const AuthorQuotes = (props) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        props.fetchAuthorQuotes();
+        props.fetchAuthorQuotes(input);
+        setInput("");
     }
+
 
     return (
         <div>
-            <h2>props.author Quotes</h2>
+            <h2>Search For Quotes by Author</h2>
             {props.isLoading ? <p>Loading....</p> : null}
             {props.error ? <p>{props.error}</p> : null}
             <div className="inputContainer">
@@ -34,7 +36,13 @@ const AuthorQuotes = (props) => {
                 <button onClick={handleSubmit}>
                     Search
                 </button>
-
+            </div>
+            <div className="authQuoteContainer">
+                {props.quotes.map(quote => (
+                    <div key={quote._id}className="authQuote">
+                        <p>{quote.content}</p>
+                    </div>
+                ))}
             </div>
         </div>
     )

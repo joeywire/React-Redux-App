@@ -8,7 +8,7 @@ import {
 const initialState = {
     isLoading: false, 
     error: "",
-    authorQuotes: {}
+    authorQuotes: []
 }
 
 const authorQuoteReducer = (state = initialState, action) => {
